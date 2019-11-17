@@ -1,8 +1,7 @@
-import { track, LightningElement } from 'lwc'
+import { LightningElement } from 'lwc'
 
 export default class exampleModal extends LightningElement {
     
-    @track
     data = {
         things: [
             {
@@ -22,5 +21,10 @@ export default class exampleModal extends LightningElement {
                 avatar: '🐁',
             },
         ]
+    }
+
+    demo_click(){
+        // eslint-disable-next-line no-alert
+        alert('click ')
     }
 }

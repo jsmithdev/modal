@@ -1,11 +1,59 @@
 <template>
-    
-    <h1 style="font-size: 1.42em;">
-        <c-modal
-            header="This is a header"
-            text="Text to trigger modal"
-            value={data}
-            variant="medium"
-        ></c-modal>
-    </h1>
+
+    <!-- Quickly setup a modal for by setting header, trigger attributes  -->
+
+    <c-modal
+        header="This is a header"
+        trigger="Text to trigger modal"
+        variant="medium">
+
+        <span slot="content">
+
+            <template for:item="thing" for:each={data.things} >
+                {thing.avatar} {thing.name} <br key={thing.name} />
+            </template>
+
+        </span>
+
+    </c-modal>
+
+    <br />
+    <br />
+    <br />
+
+    <!-- Highly customize with slots trigger, header, content and footer -->
+ 
+    <c-modal variant="medium">
+
+        <span slot="trigger">
+            <lightning-pill
+                label="Open modal using the trigger slot instead of the trigger attribute to pass in DOM instead of text"
+            ></lightning-pill>
+        </span>
+
+        <span slot="header">
+            <a href="http://lwc.land" target="_blank">
+              This is a custom header using the header slot instead of the header attribute to pass in DOM instead of text
+            </a>
+        </span>
+
+        <span slot="content">
+
+            <template for:item="thing" for:each={data.things} >
+                {thing.avatar} {thing.name} <br key={thing.name} />
+            </template>
+
+        </span>
+
+        <span slot="footer">
+
+            <lightning-button 
+                label="Can pass in DOM like buttons to add the the modal's footer"
+                variant="brand"
+                onclick={demo_click}>
+            </lightning-button>
+
+        </span>
+
+    </c-modal>
 </template>
