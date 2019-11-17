@@ -7,3 +7,7 @@ div, selection, template {
 	font-weight: inherit;
 	font-style: inherit;
 }
+
+button, lightning-button {
+	margin: .8rem;
+}

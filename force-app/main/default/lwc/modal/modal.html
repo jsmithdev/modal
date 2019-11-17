@@ -1,26 +1,28 @@
 <template>
 
-	<div class="shower" onclick={show}>
-		<a>{text}</a>
+	<div class="trigger" onclick={show}>
+		<slot name="trigger">
+			<a>{trigger}</a>
+		</slot>
 	</div>
 
     <template if:true={loading}>
-		<lightning-spinner alternative-text="Loading" size="small"
-		></lightning-spinner>
+		<lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
     </template>
 
 	<template if:false={loading}>
 
 		<template if:true={active}>
-				<section
+			<section
 				role="dialog"
 				tabindex="-1"
 				aria-labelledby="modal-heading-01"
 				aria-modal="true"
 				aria-describedby="modal-content-id-1"
-				class={modalClassList}
-			>
+				class={modalClassList}>
+
 				<div class="slds-modal__container">
+
 					<header class="slds-modal__header">
 
 						<lightning-button-icon
@@ -30,27 +32,33 @@
 							icon-class="slds-button_icon-inverse"
 							onclick={close}
 						></lightning-button-icon>
+									
+						<slot name="header">
+							<h2 class="slds-text-heading_medium slds-hyphenate header-string">
+								{header}
+							</h2>
+						</slot>
 						
-						<h2 class="slds-text-heading_medium slds-hyphenate header-string">
-	
-							{header}
-						</h2>
 					</header>
-					<div
-						class="slds-modal__content slds-p-around_medium"
-						id="modal-content-id-1">
-						
-						<template for:item="thing" for:each={things} >
-							{thing.avatar} {thing.name} <br key={thing.name} />
-						</template>
+
+
+					<div class="slds-modal__content slds-p-around_medium">
+						<slot name="content">
+							Nothing in modal's content slot. See <a href="https://github.com/jsmithdev/modal">readme</a> for more.
+						</slot>
 					</div>
 	
+
+
 					<footer class="slds-modal__footer modal-hidden">
-						
+
 						<lightning-button 
                             label="Close"
                             onclick={close}
-                        ></lightning-button>
+						></lightning-button>
+						
+						<slot name="footer"></slot>
+
 					</footer>
 				</div>
 			</section>
