@@ -15,4 +15,17 @@
         <target>lightningCommunity__Default</target>
     </targets>
 
+    <targetConfigs> 
+
+        <targetConfig targets="lightning__RecordPage">
+        </targetConfig>
+      
+        <targetConfig targets="lightning__AppPage">
+        </targetConfig>
+      
+        <targetConfig targets="lightningCommunity__Default">
+        </targetConfig>
+
+    </targetConfigs> 
+
 </LightningComponentBundle>

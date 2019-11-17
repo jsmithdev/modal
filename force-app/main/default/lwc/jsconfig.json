@@ -4,7 +4,7 @@
         "baseUrl": ".",
         "paths": {
             "c/exampleModal": [
-                "../../../../dist/lwc/exampleModal/exampleModal.js"
+                "exampleModal/exampleModal.js"
             ],
             "c/modal": [
                 "modal/modal.js"
