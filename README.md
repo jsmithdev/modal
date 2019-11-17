@@ -20,14 +20,15 @@ Example implementation [here](force-app/main/default/lwc/example/example.html); 
 <img src="https://i.imgur.com/oJFko9O.png" />
 
 ### API
+
 ```header``` --- {String} header / title for modal
 
 ```text``` --- {String} text that triggers / opens modal
 
 ```variant``` --- {String} size of modal, defaults to medium
-  - large
-  - medium
-  - small
+  -large
+  -medium
+  -small
 
 ```value``` --- {Object} data to be consumed
 
