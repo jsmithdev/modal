@@ -3,8 +3,8 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/example": [
-                "example/example.js"
+            "c/exampleModal": [
+                "../../../../dist/lwc/exampleModal/exampleModal.js"
             ],
             "c/modal": [
                 "modal/modal.js"

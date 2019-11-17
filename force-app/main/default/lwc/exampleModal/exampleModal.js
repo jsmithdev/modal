@@ -1,6 +1,6 @@
 import { track, LightningElement } from 'lwc'
 
-export default class example extends LightningElement {
+export default class exampleModal extends LightningElement {
     
     @track
     data = {

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="exampleModal">
+    <apiVersion>47.0</apiVersion>
+
+    <isExposed>true</isExposed>
+  
+    <masterLabel>Modal Demo</masterLabel>
+  
+    <description>A simple demo for a modal component</description>
+
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+</LightningComponentBundle>
