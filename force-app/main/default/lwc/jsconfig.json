@@ -3,9 +3,6 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/exampleModal": [
-                "exampleModal/exampleModal.js"
-            ],
             "c/modal": [
                 "modal/modal.js"
             ]

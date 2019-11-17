@@ -6,7 +6,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class Modal extends LightningElement {
 
     @api header
-    @api text
+    @api trigger
     @api value
     /**
      * @description {String} small | medium | large
@@ -25,12 +25,6 @@ export default class Modal extends LightningElement {
 
         this.loading = true
         this.active = true
-        
-            
-        const { things } = await this.getData() // await this.getData()
-
-        this.things = things
-
 
         this.loading = false
     }
@@ -64,21 +58,5 @@ export default class Modal extends LightningElement {
         })
 
         this.dispatchEvent(event)
-    }
-
-    /**
-     * @description mock data callout
-     */
-    async getData(){
-
-        try {
-            // eslint-disable-next-line @lwc/lwc/no-async-operation
-            return await new Promise(resolve => setTimeout(() => {
-                resolve( JSON.parse( JSON.stringify( this.value )) )
-            }),  1000)
-        }
-        catch(error){
-            return this.error(error)
-        }
     }
 }
