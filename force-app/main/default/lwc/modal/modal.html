@@ -52,6 +52,10 @@
 
 					<footer class="slds-modal__footer modal-hidden">
 
+						<div class="footer__center">
+							<slot name="footer-center"></slot>
+						</div>
+						
 						<lightning-button 
                             label="Close"
                             onclick={close}

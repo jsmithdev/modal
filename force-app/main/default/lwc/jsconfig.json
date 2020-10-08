@@ -3,6 +3,9 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/exampleModal": [
+                "exampleModal/exampleModal.js"
+            ],
             "c/modal": [
                 "modal/modal.js"
             ]
@@ -15,6 +18,11 @@
     "typeAcquisition": {
         "include": [
             "jest"
+        ]
+    },
+    "paths": {
+        "c/*": [
+            "*"
         ]
     }
 }

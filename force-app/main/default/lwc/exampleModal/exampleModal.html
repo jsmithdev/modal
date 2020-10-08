@@ -45,10 +45,22 @@
 
         </span>
 
+        <span slot="footer-center">
+
+            <lightning-button 
+                name="center"
+                label="I'm centered :)"
+                variant="neutral"
+                onclick={demo_click}>
+            </lightning-button>
+
+        </span>
+
         <span slot="footer">
 
             <lightning-button 
-                label="Can pass in DOM like buttons to add the the modal's footer"
+                name="right"
+                label="Can pass in DOM"
                 variant="brand"
                 onclick={demo_click}>
             </lightning-button>

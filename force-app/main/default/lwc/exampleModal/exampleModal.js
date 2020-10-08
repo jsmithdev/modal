@@ -23,8 +23,10 @@ export default class exampleModal extends LightningElement {
         ]
     }
 
-    demo_click(){
+    demo_click( event ){
+
+        const { name } = event.target
         // eslint-disable-next-line no-alert
-        alert('click ')
+        alert( `Hello from ${name} button clicked` )
     }
 }

@@ -11,3 +11,9 @@ div, selection, template {
 button, lightning-button {
 	margin: .8rem;
 }
+
+.footer__center {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}

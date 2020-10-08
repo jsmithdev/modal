@@ -43,6 +43,7 @@ export default class Modal extends LightningElement {
 
     close(){
         this.active = false
+        this.dispatch('close')
     }
 
     error(type, message){
@@ -58,5 +59,18 @@ export default class Modal extends LightningElement {
         })
 
         this.dispatchEvent(event)
+    }
+    /**
+     * dispatch a (bubbles & composed true) CustomEvent
+     * @param {String} name name of event
+     * @param {Object} detail object to send
+     */
+    dispatch(name, detail = {}){
+
+        this.dispatchEvent(new CustomEvent( name , {
+            bubbles: true, 
+            composed : true,
+            detail
+        }))
     }
 }
