@@ -1,5 +1,7 @@
 .history
 .localdevserver
+dist
+deploy
 
 # Logs
 logs
@@ -62,3 +64,4 @@ typings/
 
 # next.js build output
 .next
+.sfdx/indexes/lwc/custom-components.json
