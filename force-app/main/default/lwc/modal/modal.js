@@ -19,15 +19,6 @@ export default class Modal extends LightningElement {
 
 
     is = 'modal'
-
-
-    async show(){
-
-        this.loading = true
-        this.active = true
-
-        this.loading = false
-    }
     
     get modalClassList(){
 
@@ -39,6 +30,14 @@ export default class Modal extends LightningElement {
         }
 
         return 'slds-modal slds-fade-in-open slds-modal_medium'
+    }
+
+    open(){
+
+        this.loading = true
+        this.active = true
+
+        this.loading = false
     }
 
     close(){
