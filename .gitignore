@@ -1,5 +1,8 @@
+.sfdx
 .history
 .localdevserver
+dist
+deploy
 
 # Logs
 logs
