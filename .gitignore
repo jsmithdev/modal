@@ -1,3 +1,4 @@
+.sfdx
 .history
 .localdevserver
 dist
@@ -64,4 +65,3 @@ typings/
 
 # next.js build output
 .next
-.sfdx/indexes/lwc/custom-components.json
