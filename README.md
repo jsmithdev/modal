@@ -104,38 +104,37 @@ Two example implementations are [here](force-app/main/default/lwc/exampleModal/e
 
 ## Deploy
 
-Covert with SFDX; This creates a folder called `deploy`
-
 ```bash
-sfdx force:source:convert -r force-app -d deploy
+sfdx force:source:deploy -p force-app/main/default/lwc/modal
 ```
 
-Now you can deploy from the resulting `deploy` directory
-
-📌  Below deploys to the default org set
-
-- Add `-u user@domain.com` or `-u alias` to deploy else where
-
-```bash
-sfdx force:mdapi:deploy -d deploy -w -1 --verbose
-```
+📌  Above deploys to the default org set; Add `-u user@domain.com` or `-u alias` to deploy else where
 
 Results should more or less mirror below
 
 ```bash
-jamie@the-brain:~/repo/modal$ sfdx force:mdapi:deploy -d deploy -w -1  --verbose -u jamie-dev
+jamie@the-gene:~/repo/modal$ sfdx force:source:deploy -p force-app/main/default/lwc/modal -u some-org
 
-Using specified username jamie.smith@jsmith.dev
+Deploy ID: 0Af1700002qWfDOCA0
+DEPLOY PROGRESS | ████████████████████████████████████████ | 1/1 Components
 
-Job ID | 0Af5C00000n5YLOSA2
+=== Deployed Source
 
-MDAPI PROGRESS | ████████████████████████████████████████ | 1/1 Components
+ FULL NAME TYPE                     PROJECT PATH                                       
+ ───────── ──────────────────────── ────────────────────────────────────────────────── 
+ modal     LightningComponentBundle force-app/main/default/lwc/modal/modal.css         
+ modal     LightningComponentBundle force-app/main/default/lwc/modal/modal.html        
+ modal     LightningComponentBundle force-app/main/default/lwc/modal/modal.js          
+ modal     LightningComponentBundle force-app/main/default/lwc/modal/modal.js-meta.xml 
 
-TYPE                      FILE                NAME         ID
-────────────────────────  ──────────────────  ───────────  ──────────────────
-                          deploy/package.xml  package.xml
-LightningComponentBundle  deploy/lwc/modal    modal        0Rb5C0000004KGlSAM
+Deploy Succeeded.
 
+```
+
+### Deploy Singular
+
+```bash
+sfdx force:source:deploy -p force-app/main/default/lwc/modal -u some-org
 ```
 
 ---
