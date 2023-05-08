@@ -4,28 +4,31 @@
 
 ## API
 
+### Functions
+
+| Syntax      | Description | Usage     |
+| :---        |    :---   |   :--- |
+| open    | open model from outside       | `this.template.querySelector('c-modal').open()`       |
+| close   | close model from outside      | `this.template.querySelector('c-modal').close()`      |
+| isOpen  | check modal from outside      | `this.template.querySelector('c-modal').isOpen()`     |
+
 ### Attributes
 
-```header``` --- {String} header / title for modal
-
-```trigger``` --- {String} text that triggers / opens modal
-
-```variant``` --- {String} size of modal, defaults to medium
-  -large
-  -medium
-  -small
+| Syntax      | Description | Usage     |
+| :---        |    :---   |   :--- |
+| header    | header / title for modal       | `header="My Title"`       |
+| trigger   | optional text that triggers / opens modal     | `trigger="Click Me"`  |
+| variant  | size of modal (large, medium, small)  | `variant="large"` |
 
 ### Slots
 
-`header` --- `<span slot="content"> { DOM to render } </span>`
-
-`trigger` --- `<span slot="trigger"> { DOM to render } </span>`
-
-`content` --- `<span slot="content"> { DOM to render } </span>`
-
-`footer` --- `<span slot="footer"> { DOM to render } </span>`
-
-`footer-center` --- `<span slot="footer-center"> { DOM to render } </span>`
+| Syntax      | Description | Usage     |
+| :---        |    :---   |   :--- |
+| header    | header content  | `<span slot="content"> { DOM to render } </span>`      |
+| content  | content for the body of the modal  | `<span slot="content"> { DOM to render } </span>` |
+| footer  | footer content  | `<span slot="footer"> { DOM to render } </span>` |
+| footer-center  | footer content to be centered | `<span slot="footer-center"> { DOM to render } </span>` |
+| trigger   | optionally trigger modal from DOM content  |`<span slot="trigger"> { DOM to render } </span>` |
 
 ## Consuming
 

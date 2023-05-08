@@ -5,6 +5,11 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class Modal extends LightningElement {
 
+    active
+    loading
+    data = []
+    is = 'modal'
+
     @api header
     @api trigger
     @api value
@@ -12,22 +17,24 @@ export default class Modal extends LightningElement {
      * @description {String} small | medium | large
      */
     @api variant
-    
-    @track loading
-    @track active
-    @track data = []
 
-
-    is = 'modal'
-
-
-    async show(){
+    @api open(){
 
         this.loading = true
         this.active = true
 
         this.loading = false
     }
+
+    @api close(){
+        this.active = false
+        this.dispatch('close')
+    }
+
+    @api isOpen(){
+        return this.active ? true : false;
+    }
+
     
     get modalClassList(){
 
@@ -41,13 +48,9 @@ export default class Modal extends LightningElement {
         return 'slds-modal slds-fade-in-open slds-modal_medium'
     }
 
-    close(){
-        this.active = false
-        this.dispatch('close')
-    }
 
-    error(type, message){
-        this.toast(message, type, 'error')
+    error(message){
+        this.toast(message, 'Error', 'error')
     }
 
     toast( message = '', title = 'Info', variant = 'info') {
