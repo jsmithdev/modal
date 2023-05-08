@@ -29,4 +29,11 @@ export default class exampleModal extends LightningElement {
         // eslint-disable-next-line no-alert
         alert( `Hello from ${name} button clicked` )
     }
+
+
+	apiFunctions(){
+		this.template.querySelector('c-modal').isOpen() 
+		? this.template.querySelector('c-modal').close()
+		: this.template.querySelector('c-modal').open()
+	}
 }

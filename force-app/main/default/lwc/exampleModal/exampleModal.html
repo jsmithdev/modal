@@ -1,10 +1,29 @@
 <template>
 
+
+    <lightning-button label="API Function Demo" onclick={apiFunctions}></lightning-button>
+
+	<c-modal
+		header="Modal Header"
+	>
+		<span slot="content">
+			<p>Modal Content</p>
+		</span>
+		<span slot="footer">
+			<lightning-button label="Custom" variant="brand" onclick={apiFunctions}></lightning-button>
+		</span>
+	</c-modal>
+
+	<br />
+	<br />
+	<br />
+	<br />
+
     <!-- Quickly setup a modal for by setting header, trigger attributes  -->
 
     <c-modal
         header="This is a header"
-        trigger="Text to trigger modal"
+        trigger="Demo text to trigger modal"
         variant="medium">
 
         <span slot="content">
