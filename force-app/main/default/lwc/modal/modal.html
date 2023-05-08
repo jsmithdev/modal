@@ -1,10 +1,12 @@
 <template>
 
-	<div class="trigger" onclick={open}>
-		<slot name="trigger">
-			<a>{trigger}</a>
-		</slot>
-	</div>
+    <template if:true={trigger}>
+		<div class="trigger" onclick={open}>
+			<slot name="trigger">
+				<a>{trigger}</a>
+			</slot>
+		</div>
+    </template>
 
     <template if:true={loading}>
 		<lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
