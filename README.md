@@ -24,24 +24,25 @@
 
 | Syntax      | Description | Usage     |
 | :---        |    :---   |   :--- |
-| header    | header content  | `<span slot="content"> { DOM to render } </span>`      |
+| header    | header content  | `<span slot="header"> { DOM to render } </span>`      |
 | content  | content for the body of the modal  | `<span slot="content"> { DOM to render } </span>` |
 | footer  | footer content  | `<span slot="footer"> { DOM to render } </span>` |
 | footer-center  | footer content to be centered | `<span slot="footer-center"> { DOM to render } </span>` |
 | trigger   | optionally trigger modal from DOM content  |`<span slot="trigger"> { DOM to render } </span>` |
 
-## Consuming
+## Usage
 
 Two example implementations are [here](force-app/main/default/lwc/exampleModal/exampleModal.html) -- works well with lwc local dev server
 
-### Quickly setup a basic modal by setting `header`, `trigger` attributes and use `content` slot for content
+📌 Can use any combo of slots and attributes (slots override attributes if both are given)
+
+### Create a simple modal using attributes and the `content` slot for content:
 
 ```html
 
 <c-modal
     header="This is a header"
-    trigger="Text to trigger modal"
-    variant="medium">
+    trigger="Text to trigger modal">
 
     <span slot="content">
 
@@ -54,18 +55,13 @@ Two example implementations are [here](force-app/main/default/lwc/exampleModal/e
 </c-modal>
 ```
 
-<img src="https://i.imgur.com/irT1Rfm.png" width="500px" />
+<!-- <img src="https://i.imgur.com/irT1Rfm.png" width="500px" /> -->
 
-### Or highly customize by using pre made `slot`s for `trigger`, `header`, `content` and / or `footer`
-
-📌 Can use any combo of slots and attributes (slots override if both are given)
+### Or highly customize by using slots:
 
 ```html
 
-<c-modal
-    header="This is a header"
-    value={data}
-    variant="medium">
+<c-modal variant="large">
 
     <span slot="trigger">
         <lightning-pill
@@ -100,7 +96,7 @@ Two example implementations are [here](force-app/main/default/lwc/exampleModal/e
 </c-modal>
 ```
 
-<img src="https://i.imgur.com/BXiNM4H.png" width="500px" />
+<!-- img src="https://i.imgur.com/BXiNM4H.png" width="500px" / -->
 
 ## Deploy
 
